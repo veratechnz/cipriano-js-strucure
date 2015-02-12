@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Local Storage</title>
+</head>
+<body>
+	<div id="showMe"></div>
+	<form>
+		<input type="button" id="clear" value="clear-storage">
+		<input type="button" id="fill" value="fill-storage">
+	</form>
+	<script>
+	
+		init();
+
+		function init() {
+
+			// Clear Local Storage Data
+			var clearButton = document.getElementById('clear');
+			clearButton.onclick = clearStorage;
+
+			// Fill Local Storage Data
+			var fillButton = document.getElementById('fill');
+			fillButton.onclick = draftStorage;
+
+		}
+
+		function clearStorage() {
+			localStorage.clear();
+		}
+
+		function draftStorage() {
+			localStorage.setItem('sticky0','Go to movies');
+			localStorage.setItem('sticky1','Buy Groceries');
+			localStorage.setItem('sticky2','Go Tramping');
+			localStorage.setItem('sticky3','Grab a pizza');
+			// var showStore = localStorage.getItem('sticky0');
+			// alert(showStore);
+		}
+
+	</script>
+</body>
+</html>
